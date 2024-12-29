@@ -5,7 +5,7 @@ function App() {
   const [data, setData] = useState(null)
 
   useEffect(() => {
-    fetch(`https://last-airbender-api.fly.dev/api/v1/characters/avatar`)
+    fetch(`https://last-airbender-api.fly.dev/api/v1/characters`)
       .then(response => response.json())
       .then(json => {
         json.splice(7);
@@ -13,14 +13,25 @@ function App() {
       })
   }, [])
 
+  if (!data){
+    return <div>Loading...</div>
+  }
 
   return (
     <div>
       <h1>ATLA - Memory Game</h1>
       <div className="" id="container">
-        {JSON.stringify(data[0])}
+        { data && (
+        <ul>
+        {data.map((item) => {
+          return(
+            <li key={item._id}>
+              <img src={item.photoUrl} alt="" />
+            </li>
+        )})}
+        </ul>
+      )}
 
-        <img src={data[0].photoUrl} alt="" />
       </div>
     </div>
   )
