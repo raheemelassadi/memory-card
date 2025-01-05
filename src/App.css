@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+img {
+    user-drag: none; -moz-user-select: none; -webkit-user-drag: none;
+
+}
+
+.items {
+    transition: transform .1s ease-in-out;
+}
+
+.items:active {
+    transform: scale(.3);
+}
