@@ -10,7 +10,7 @@ function App() {
     fetch(`https://last-airbender-api.fly.dev/api/v1/characters`)
       .then(response => response.json())
       .then(json => {
-        setData(json.slice(0, 6)); 
+        setData(json.slice(0, 9)); 
       });
   }, []);
 
@@ -40,20 +40,22 @@ function App() {
   }
 
   return (
-    <div className="p-14">
+    <div className="flex justify-center">
       
+      <div className="">
       <div className="flex gap-4 justify-between">
         <div></div>
         <h1 className="text-center text-xl font-bold pb-8">ATLA - Memory Game</h1>
         <h3>Score: {score}</h3>
       </div>
       
-      <div className="grid grid-cols-2 grid-rows-3 gap-6">
+      <div className="grid grid-cols-3 grid-rows-3 gap-6">
         {data.map((item) => (
           <div key={item._id} className="p-4 rounded bg-gray-200 items" >
             <img src={item.photoUrl} alt="" className="w-full h-auto rounded cursor-pointer " onClick={() => handleClick(item._id)}/>
           </div>
         ))}
+      </div>
       </div>
     </div>
   );
