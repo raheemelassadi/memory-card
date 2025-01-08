@@ -2,15 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-img {
-    user-drag: none; -moz-user-select: none; -webkit-user-drag: none;
-
+body {
+    background-color: bisque;
 }
 
-.items {
+img {
+    user-drag: none; -moz-user-select: none; -webkit-user-drag: none;
+}
+
+.img {
     transition: transform .1s ease-in-out;
 }
 
-.items:active {
+.img:active {
     transform: scale(.3);
 }
