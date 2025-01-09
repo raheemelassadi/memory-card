@@ -58,7 +58,7 @@ function App() {
         <h3>Score: {score}</h3>
       </div>
       
-      {/* map over the state and return img with id */}
+      {/* map over the state and return img with id from Data */}
       <div className="grid grid-cols-3 grid-rows-3 gap-6">
         {data.map((item) => (
           <div key={item._id} className="p-4 rounded bg-gray-200 items" >
